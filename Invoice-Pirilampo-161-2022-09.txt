@@ -76,7 +76,7 @@ VAT BE 0885.840.226 \\
 
 #+latex_header: \usepackage{aurical}
 
-* Items
+* Items 2
 
 # #+ATTR_LaTeX: :environment longtabu :align lXrr
 # #+BEGIN: clocktable :maxlevel 2 :scope ("~/org/work/") :block 2015-12 :fileskip0 t :tags "-notbillable" :lang "en" :narrow 80! :indent t
@@ -93,7 +93,7 @@ VAT BE 0885.840.226 \\
 | TECH Consulting and PM services September 2022 (Fabrice Niessen) | Timed | 123.45 | \EUR/d |    20.25 |   2499.86 |
 #+TBLFM: $6=$3*$5;%.2f::
 
-* Amount Due
+* Amount Due 2
 
 #+latex: \hfill\colorbox{prlp-gray96}{\begin{minipage}{7.5cm}
 #+ATTR_LaTeX: :environment tabu :align Xrl
@@ -109,14 +109,14 @@ VAT BE 0885.840.226 \\
 
 #+latex: \end{minipage}}
 
-* Notes
+* Notes 2
 # Visible to Client
 
 #+latex: {\Fontskrivan\large
 *Thank you!*  I really appreciate working with you.
 #+latex: }
 
-* Terms
+* Terms 2
 
 Please transfer money within *10 days* of receiving this invoice to the account
 ~BE94 9731 4230 6714~ quoting structured reference ~+++220/9700/16103+++~.
