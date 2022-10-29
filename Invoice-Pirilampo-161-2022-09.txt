@@ -1,0 +1,122 @@
+#+TITLE:     Invoice #161
+#+AUTHOR:    Pirilampo BVBA
+#+DATE:      2022-09-28
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:2 num:nil toc:nil
+
+#+SETUPFILE: ~/org/theme-readtheorg.setup
+
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [a4paper,table]
+#+LaTeX_HEADER: \usepackage{pirilampo-invoice}
+
+#+latex: \begin{tikzpicture}[overlay,remember picture]
+#+latex: \draw [gray] ($(current page.north west)!0.3703!(current page.south west)$)--++(0.5cm,0cm); % 110 from top
+#+latex: \draw [gray] ($(current page.north west)!0.7239!(current page.south west)$)--++(0.5cm,0cm); % 215 from top
+# #+latex: \draw [gray] ($(current page.north west)!0.1481!(current page.south west)$)--++(19cm,0cm); % 44 from top
+# #+latex: \draw [gray] ($(current page.north west)!0.2088!(current page.south west)$)--++(19cm,0cm); % 62 from top
+# #+latex: \draw [gray] ($(current page.north west)!0.2694!(current page.south west)$)--++(19cm,0cm); % 80 from top
+# #+latex: \draw [gray] ($(current page.north west)!0.4667!(current page.north east)$)--++(0cm,-80mm); % 98 from left
+# #+latex: \draw [gray] ($(current page.north west)!0.6857!(current page.north east)$)--++(0cm,-80mm); % 144 from left
+# #+latex: \draw [gray] ($(current page.north west)!0.9048!(current page.north east)$)--++(0cm,-80mm); % 190 from left
+#+latex: \end{tikzpicture}
+
+# * From
+
+#+latex: \begin{textblock}{40}(14,18) % width, left, top
+#+latex: \noindent                      % Needed so left of paragraph lines up.
+#+latex:    \includegraphics[width=30mm]{logo.png}
+#+latex: \end{textblock}
+
+#+latex: \begin{textblock}{65}(14,46) % width, left, top
+#+latex: \vspace{8mm}
+#+latex: \noindent                      % Needed so left of paragraph lines up.
+#+latex: \textcolor{prlp-dodger-blue}{%
+*Pirilampo BVBA* \\
+Henri Regastraat 3 \\
+3000 Leuven \\
+VAT BE 0642.789.702 RPR Leuven
+#+latex: }
+#+latex: \vspace{8mm}
+#+latex: \end{textblock}
+
+#+latex_header: \usepackage{sectsty}
+#+latex: \sectionfont{\color{prlp-gray50}\scshape}
+
+# * To
+
+#+latex: \begin{textblock}{84}(106,46) % width, left, top
+#+latex: \scriptsize\textcolor{prlp-gray50}{%
+Return Address: Pirilampo BVBA -- Henri Regastraat 3 -- 3000 Leuven
+#+latex: }
+#+latex: \end{textblock}
+
+#+latex: \textblockcolour{prlp-ivory} % Should be in the TikZ picture!!!
+
+#+latex_header: \usepackage{tikz}
+#+latex_header: \usetikzlibrary{shapes,calc}
+#+latex_header: \newcommand{\titlebox}[2]{
+#+latex_header: \begin{tikzpicture}[every text node part/.style={text centered}]
+#+latex_header:     \node[line width=1pt, minimum height=25mm,
+#+latex_header:     draw=prlp-light-yellow, text width=#1, rounded corners](rs)
+#+latex_header:     {#2};
+#+latex_header: \end{tikzpicture}}
+
+#+latex: \begin{textblock}{78}(105,49) % width, left, top
+#+latex: \titlebox{75mm}{\raggedright%
+*AREMIS Belgium NV/SA* \\
+Charles Schallerlaan 54 \\
+1160 Oudergem \\
+VAT BE 0885.840.226 \\
+#+latex: }\end{textblock}
+
+#+latex: \vspace{66mm}
+
+#+latex_header: \usepackage{aurical}
+
+* Items
+
+# #+ATTR_LaTeX: :environment longtabu :align lXrr
+# #+BEGIN: clocktable :maxlevel 2 :scope ("~/org/work/") :block 2015-12 :fileskip0 t :tags "-notbillable" :lang "en" :narrow 80! :indent t
+#
+# #+END:
+
+#+latex: \extrarowsep=1mm
+
+#+ATTR_LaTeX: :environment tabu :align Xlrlrrl
+#+name: items
+| <64>                                                             |       |        |     |          |           |
+| \rowfont{\bfseries}\rowcolor{prlp-gray96} Description            | Type  |   Rate |     | Quantity | Sub-total |
+|------------------------------------------------------------------+-------+--------+-----+----------+-----------|
+| TECH Consulting and PM services September 2022 (Fabrice Niessen) | Timed | 123.45 | \EUR/d |    20.25 |   2499.86 |
+#+TBLFM: $6=$3*$5;%.2f::
+
+* Amount Due
+
+#+latex: \hfill\colorbox{prlp-gray96}{\begin{minipage}{7.5cm}
+#+ATTR_LaTeX: :environment tabu :align Xrl
+| /Sub-total/        |        2499.86 | \EUR |
+|------------------+----------------+---|
+| /Tax @ 21%/        |         524.97 | \EUR |
+|------------------+----------------+---|
+| *Total Amount Due* | *\large 3024.83* | *\EUR* |
+#+TBLFM: @1$2=vsum(remote(items,@3$6..@>$6));%.2f::@2$2=@1*0.21;%.2f::@3$2=vsum(@1..@-1);*\large %.2f*
+
+# Optionally, before "Total Amount Due":
+# Amount Paid: -0.00 \EUR
+
+#+latex: \end{minipage}}
+
+* Notes
+# Visible to Client
+
+#+latex: {\Fontskrivan\large
+*Thank you!*  I really appreciate working with you.
+#+latex: }
+
+* Terms
+
+Please transfer money within *10 days* of receiving this invoice to the account
+~BE94 9731 4230 6714~ quoting structured reference ~+++220/9700/16103+++~.

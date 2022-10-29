@@ -1,0 +1,128 @@
+% Intended LaTeX compiler: pdflatex
+\documentclass[a4paper,table]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[french, english]{babel}
+\usepackage{pirilampo-invoice}
+\usepackage{sectsty}
+\usepackage{tikz}
+\usetikzlibrary{shapes,calc}
+\newcommand{\titlebox}[2]{
+\begin{tikzpicture}[every text node part/.style={text centered}]
+\node[line width=1pt, minimum height=25mm,
+draw=prlp-light-yellow, text width=#1, rounded corners](rs)
+{#2};
+\end{tikzpicture}}
+\usepackage{aurical}
+\author{Pirilampo BVBA}
+\date{2022-09-28}
+\title{Invoice \#161}
+\hypersetup{
+ pdfauthor={Pirilampo BVBA},
+ pdftitle={Invoice \#161},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.4.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\begin{tikzpicture}[overlay,remember picture]
+\draw [gray] ($(current page.north west)!0.3703!(current page.south west)$)--++(0.5cm,0cm); % 110 from top
+\draw [gray] ($(current page.north west)!0.7239!(current page.south west)$)--++(0.5cm,0cm); % 215 from top
+
+\end{tikzpicture}
+
+\begin{textblock}{40}(14,18) % width, left, top
+\noindent                      % Needed so left of paragraph lines up.
+\includegraphics[width=30mm]{logo.png}
+\end{textblock}
+
+\begin{textblock}{65}(14,46) % width, left, top
+\vspace{8mm}
+\noindent                      % Needed so left of paragraph lines up.
+\textcolor{prlp-dodger-blue}{%
+\textbf{Pirilampo BVBA} \\
+Henri Regastraat 3 \\
+3000 Leuven \\
+VAT BE 0642.789.702 RPR Leuven
+}
+\vspace{8mm}
+\end{textblock}
+
+\sectionfont{\color{prlp-gray50}\scshape}
+
+\begin{textblock}{84}(106,46) % width, left, top
+\scriptsize\textcolor{prlp-gray50}{%
+Return Address: Pirilampo BVBA -- Henri Regastraat 3 -- 3000 Leuven
+}
+\end{textblock}
+
+\textblockcolour{prlp-ivory} % Should be in the TikZ picture!!!
+
+\begin{textblock}{78}(105,49) % width, left, top
+\titlebox{75mm}{\raggedright%
+\textbf{AREMIS Belgium NV/SA} \\
+Charles Schallerlaan 54 \\
+1160 Oudergem \\
+VAT BE 0885.840.226 \\
+}\end{textblock}
+
+\vspace{66mm}
+
+\section*{Items}
+\label{sec:org817eebe}
+
+\extrarowsep=1mm
+
+\begin{table}[!htbp]
+\label{tab:orge09cfa6}
+\centering
+\begin{tabu}{Xlrlrrl}
+\rowfont{\bfseries}\rowcolor{prlp-gray96} Description & Type & Rate &  & Quantity & Sub-total\\
+\hline
+TECH Consulting and PM services September 2022 (Fabrice Niessen) & Timed & 123.45 & \texteuro{}/d & 20.25 & 2499.86\\
+\end{tabu}
+\end{table}
+
+\section*{Amount Due}
+\label{sec:org3fc4574}
+
+\hfill\colorbox{prlp-gray96}{\begin{minipage}{7.5cm}
+\begin{center}
+\begin{tabu}{Xrl}
+\emph{Sub-total} & 2499.86 & \texteuro{}\\
+\hline
+\emph{Tax @ 21\%} & 524.97 & \texteuro{}\\
+\hline
+\textbf{Total Amount Due} & \textbf{\large 3024.83} & \textbf{\texteuro{}}\\
+\end{tabu}
+\end{center}
+
+\end{minipage}}
+
+\section*{Notes}
+\label{sec:org9dbedd8}
+{\Fontskrivan\large
+\textbf{Thank you!}  I really appreciate working with you.
+}
+
+\section*{Terms}
+\label{sec:org0a7244b}
+
+Please transfer money within \textbf{10~days} of receiving this invoice to the account
+\lstinline|BE94 9731 4230 6714| quoting structured reference \lstinline|+++220/9700/16103+++|.
+\end{document}
