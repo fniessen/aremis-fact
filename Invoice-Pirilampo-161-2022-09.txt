@@ -27,7 +27,7 @@
 
 #+latex: \begin{textblock}{40}(14,18) % width, left, top
 #+latex: \noindent                      % Needed so left of paragraph lines up.
-#+latex:    \includegraphics[width=30mm]{logo-pirilampo.png}
+#+latex:    \includegraphics[width=30mm]{assets/images/logo-pirilampo.png}
 #+latex: \end{textblock}
 
 #+latex: \begin{textblock}{65}(14,46) % width, left, top
